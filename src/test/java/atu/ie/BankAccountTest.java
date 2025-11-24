@@ -52,4 +52,11 @@ public class BankAccountTest {
         account.withdraw(100);
         assertEquals(0,account.getBalance());
     }
+
+    @Test
+    public void withdrawNegativeTest()
+    {
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> account.withdraw(-1));
+        assertEquals("Withdraw amount must be greater than 0.", ex.getMessage());
+    }
 }
