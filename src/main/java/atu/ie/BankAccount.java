@@ -41,4 +41,12 @@ public class BankAccount {
         }
         this.balance += depositAmount;
     }
+
+    public void withdraw(int withdrawAmount) {
+        if (withdrawAmount <= 0)
+            {
+            throw new IllegalArgumentException("Withdraw amount must be greater than 0.");
+            }
+        this.balance -= withdrawAmount;
+    }
 }

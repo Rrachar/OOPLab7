@@ -44,4 +44,12 @@ public class BankAccountTest {
         assertEquals("Deposit amount must be greater than 0.", ex.getMessage());
 
     }
+
+    @Test
+    public void WithdrawPositiveTest()
+    {
+        account = new BankAccount("ACC12345", "Paul",  100);
+        account.withdraw(100);
+        assertEquals(0,account.getBalance());
+    }
 }
