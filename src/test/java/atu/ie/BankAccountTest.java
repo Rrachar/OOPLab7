@@ -22,6 +22,7 @@ public class BankAccountTest {
         assertEquals(100,account.getBalance());
     }
 
+
     @Test
     public void constructorNegativeInitialisation()
     {
