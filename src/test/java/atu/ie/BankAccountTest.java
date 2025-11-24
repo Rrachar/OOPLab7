@@ -60,4 +60,15 @@ public class BankAccountTest {
         Exception ex = assertThrows(IllegalArgumentException.class, () -> account.withdraw(-1));
         assertEquals("Withdraw amount must be greater than 0.", ex.getMessage());
     }
+
+    @Test
+    public void WithdrawOverBalanceTest()
+    {
+       account = new BankAccount("ACC12345", "Paul",  100);
+       Exception ex = assertThrows(IllegalArgumentException.class, () -> account.withdraw(150));
+       assertEquals("Not enough funds to withdraw that amount.", ex.getMessage());
+
+
+
+    }
 }

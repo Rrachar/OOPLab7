@@ -47,6 +47,10 @@ public class BankAccount {
             {
             throw new IllegalArgumentException("Withdraw amount must be greater than 0.");
             }
+        if(withdrawAmount > balance)
+        {
+            throw new IllegalArgumentException("Not enough funds to withdraw that amount.");
+        }
         this.balance -= withdrawAmount;
     }
 }
